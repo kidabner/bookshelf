@@ -5,35 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    
     <style>
         .text{
             width: 1080px;
             font-size: 30px;
+            /* 设置文本区域左右两端对齐 */
             text-align: justify;
-            margin: 30px;
+            /* 设置pre区域断句换行时，保留完整的单词 */
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-        .catalogue{
+        .menu{
+            /* 设置该区域元素悬浮 */
             position: fixed;
-            width: inherit;
             margin: 20px;
         }
     </style>
+
 </head>
 <body>
-    <div class="catalogue">
+    <div class="menu">
         <form method="post">
-            {% for i in textList%}
-            <br /><input type="submit" name="book" value="{{i}}">
-            {%endfor%}
+            {% for i in bookList %}
+                <br /><input type="submit" name="book" value="{{i}}" />
+            {% endfor %}
         </form>
     </div>
+
     <div align="center">
         <pre class="text">
             {{data}}
-        </pre> 
-    </div>    
+        </pre>
+    </div>
 </body>
 </html>
